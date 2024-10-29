@@ -1,108 +1,159 @@
-body{
-    font-family: sans-serif;
-    background-color: rgb(100, 143, 241)
+* {
+    box-sizing: border-box;
 }
-::placeholder{
-    opacity: 0.5;
-    color: white;
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(100, 143, 241);
+    overflow-x: hidden;
 }
-.contact-form{
+
+header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* Reduced padding for less gap */
 }
-.contact-form form input {
-    padding: 8px;
-    height: 24px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 98%;
-    border: none;
-    color: white;
+
+.logo img {
+    max-height: 80px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 0; /* Removed extra padding */
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu li a {
+    margin-right: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
     font-weight: 550;
-    box-shadow: 0px 0px 5px white;
-    border-radius: 10px;
-    background-color: rgb(100, 143, 241)
 }
-.contact-form form input:focus{
-    outline: 1px solid rgb(0, 0, 133);
-    box-shadow: 0px 0px 10px blue;
+.nav-menu li a:hover{
+    border-bottom: 2px solid #02ffff;
+    color: #02ffff;
 }
-.contact-form form input:hover{
-    box-shadow: 0px 0px 10px blue;
+/* Responsive Header and Navigation */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 15px; /* Further reduce padding on small screens */
+    }
+
+    .nav-menu {
+        gap: 10px;
+    }
 }
-.head p{
-    font-size: 18px;
-    color: rgb(7, 7, 88);
-}
-.head h2{
-    font-size: 28px;
-}
-.head{
+
+.head {
     font-weight: bold;
     text-align: center;
     color: white;
+    margin-top: 15px; /* Reduced top margin */
 }
-.contact-form form textarea:focus{
-    outline: 1px solid rgb(0, 0, 133);
-    box-shadow: 0px 0px 10px blue;
+
+.head h2 {
+    font-size: 28px;
 }
-.contact-form form textarea:hover{
-    box-shadow: 0px 0px 10px blue;
+
+.head p {
+    font-size: 18px;
+    color: rgb(7, 7, 88);
 }
-.info{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 40%;
+
+/* Contact Form Container */
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Contact Information */
+.info {
+    flex: 1;
     color: white;
     font-size: 13px;
-    text-align: left;
-    margin-right: 30px;
+    text-align: center;
 }
-.info p,h2,h3{
-    margin-left: 10px;
-}
-#cimg{
+
+#cimg {
     width: 90%;
-    height: 60%;
+    height: auto;
+    max-width: 100%;
     border-radius: 20px;
 }
-.contact-form form textarea{
-    color: white;
-    resize: vertical;
-    min-height: 20px;
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
-    height: 24px;
-    width: 98%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    font-weight: 550;
-    box-shadow: 0px 0px 5px white;
-    background-color: rgb(100, 143, 241)
-}
-.contact-form form{
+
+/* Form Styling */
+.contact-form form {
+    flex: 1;
     font-weight: 500;
     text-align: left;
     font-size: 17px;
-    width: 60%;
-    height: 390px;
-    box-shadow: 0px 0px 5px black;
+    max-width: 100%;
     padding: 20px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgb(144, 136, 255) , rgb(0, 247, 214));
+    background-image: linear-gradient(to right, rgb(144, 136, 255), rgb(0, 247, 214));
+    box-shadow: 0px 0px 5px black; /* Box shadow for form */
 }
-.txts{
-    margin-top:10px;
-    margin-bottom:10px;
-    color: white;
+.contact-form textarea{
+    resize: vertical;
+    min-height: 40px;
 }
-#sbtn {
-    margin-top: 2px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.contact-form form input,
+.contact-form form textarea {
     width: 100%;
-    text-align: center;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 550;
+    background-color: rgb(100, 143, 241);
+    box-shadow: 0px 0px 5px white; /* Original box shadow */
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+    outline: 1px solid rgb(0, 0, 133); /* Outline color on focus */
+    box-shadow: 0px 0px 10px blue; /* Box shadow on focus */
+}
+
+.contact-form form input:hover,
+.contact-form form textarea:hover {
+    box-shadow: 0px 0px 10px blue; /* Box shadow on hover */
+}
+
+::placeholder {
+    opacity: 0.5;
+    color: white; /* Placeholder color */
+}
+
+/* Label Styling */
+.contact-form form label {
+    color: white; /* Set label color to white */
+}
+
+#sbtn {
+    width: 100%;
+    padding: 10px;
     border: none;
     font-weight: 600;
     font-size: 14px;
@@ -112,6 +163,48 @@ body{
     cursor: pointer;
     transition: 0.3s;
 }
-#sbtn:hover{
+
+#sbtn:hover {
     background: rgb(2, 2, 63);
+}
+footer {
+    margin-top: 20px;
+    text-align: center; /* Centers footer content */
+    padding: 15px; /* Adds padding to footer */
+    background-color: rgb(0, 37, 116);
+    color: white;
+    position: relative; /* Positions the footer */
+    bottom: 0; /* Aligns footer to bottom */
+    width: 100%; /* Full width for footer */
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.myemail a {
+    color: white; /* Change the link color to white */
+    text-decoration: none; /* Optional: removes underline from the link */
+}
+
+.myemail a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .contact-form {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .info,
+    .contact-form form {
+        width: 100%;
+    }
+
+    .head h2 {
+        font-size: 24px;
+    }
+
+    .head p {
+        font-size: 16px;
+    }
 }
