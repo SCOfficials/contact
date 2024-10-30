@@ -7,10 +7,15 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: rgb(100, 143, 241);
+    background-color: rgb(3 158 235 / 39%);
     overflow-x: hidden;
 }
-
+h2,h3,p{
+    text-shadow: 0px 0px 4px rgb(9, 3, 117);
+}
+.head p{
+    text-shadow: none;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -34,7 +39,8 @@ nav {
 }
 
 .nav-menu li {
-    list-style: none;
+    text-shadow: 0px 0px 4px blue;
+    list-style: none; /* Remove bullets */
 }
 
 .nav-menu li a {
@@ -45,8 +51,8 @@ nav {
     font-weight: 550;
 }
 .nav-menu li a:hover{
-    border-bottom: 2px solid #02ffff;
-    color: #02ffff;
+    border-bottom: 2px solid #02a2ff;
+    color: #3fccf7;
 }
 /* Responsive Header and Navigation */
 @media (max-width: 768px) {
